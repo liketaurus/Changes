@@ -4,15 +4,31 @@
 <head>
     <meta charset="UTF-8" />
     <title>Гадання за книгою змін І-Цзин</title>
-    <style>
-
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Задайте важливе для вас питання й натисніть на кнопку аби отримати результати</h1>
-    <button onclick="getRandomHexagrams()">Отримати результати</button>
+    <header>
+        <div class="header-left">
+            <img src="logo.png" alt="Logo">
+            <h1>Ворожіння за книгою змін І-Цзинь</h1>
+        </div>
+        <div class="header-right">
+            <button class="header-button" onclick="showAboutDialog()">Про програму</button>
+            <button class="header-button" onclick="redirectToBook()">Книга змін</button>
+        </div>
+    </header>
+
+    <h1>Задайте важливе для вас питання й натисніть на кнопку аби отримати передбачення!</h1>
+    <button onclick="getRandomHexagrams()">Отримати передбачення</button>
     <div id="results"></div>
+
+    <footer>
+        <p>&copy; 2023 Всі права захищені</p>
+    </footer>
 
     <script src="data.js"></script>
     <script src="index.js"></script>
