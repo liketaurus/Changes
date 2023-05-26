@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Гадання за книгою змін І-Цзин</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Задайте важливе для вас питання й натисніть на кнопку аби отримати результати</h1>
+    <button onclick="getRandomHexagrams()">Отримати результати</button>
+    <div id="results"></div>
+
+    <script>
+        const hexagrams = [
+            {
+                name: "1. Чжень",
+                image: "䷀",
+                description:
+                    "Творення. Перша гексаграма Книги змін. Символізує початок всього і вказує на необхідність дії.",
+            },
+            {
+                name: "2. Кхун",
+                image: "䷁",
+                description:
+                    "Прибуток. Друга гексаграма Книги змін. Символізує розвиток і позитивний результат.",
+            },
+            {
+                name: "3. Цзюнь",
+                image: "䷂",
+                description:
+                    "Початкова скромність. Третя гексаграма Книги змін. Символізує початкову скромність і необхідність розвитку.",
+            },
+            {
+                name: "4. Мень",
+                image: "䷃",
+                description:
+                    "Юність. Четверта гексаграма Книги змін. Символізує юність і необхідність розвитку.",
+            },
+            {
+                name: "5. Хсю",
+                image: "䷄",
+                description:
+                    "Очікування. П'ята гексаграма Книги змін. Символізує очікування і необхідність дисципліни.",
+            },
+            {
+                name: "6. Сунь",
+                image: "䷅",
+                description:
+                    "Суперечка. Шоста гексаграма Книги змін. Символізує суперечку і необхідність розв'язання конфлікту.",
+            },
+            {
+                name: "7. Сцзе",
+                image: "䷆",
+                description:
+                    "Армия. Сьома гексаграма Книги змін. Символізує армію і необхідність дисципліни.",
+            },
+            {
+                name: "8. Бь",
+                image: "䷇",
+                description:
+                    "Солідарність. Восьма гексаграма Книги змін. Символізує солідарність і необхідність співпраці.",
+            },
+            {
+                name: "9. Сяо Цю",
+                image: "䷈",
+                description:
+                    "Малий вплив. Дев'ята гексаграма Книги змін. Символізує малий вплив і необхідність розвитку.",
+            },
+            {
+                name: "10. Лю",
+                image: "䷉",
+                description:
+                    "Закріплення. Десята гексаграма Книги змін. Символізує закріплення і необхідність розвитку.",
+            },
+        ];
+
+        function shuffle(array) {
+            let currentIndex = array.length;
+            let temporaryValue;
+            let randomIndex;
+
+            while (currentIndex !== 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+
+            return array;
+        }
+
+        function getRandomHexagrams() {
+            const results = document.getElementById("results");
+            results.innerHTML = "";
+
+            const hexagramDiv = document.createElement("div");
+            hexagramDiv.style.display = "flex";
+            hexagramDiv.style.flexDirection = "row";
+            hexagramDiv.style.justifyContent = "space-between";
+
+            const randomHexagrams = shuffle(hexagrams).slice(0, 3);
+
+            randomHexagrams.forEach((hexagram) => {
+                const hexagramInnerDiv = document.createElement("div");
+                hexagramInnerDiv.innerHTML = `<p style="font-size: 50px">${hexagram.image}</p><h2>${hexagram.name}</h2><p>${hexagram.description}</p>`;
+                hexagramDiv.appendChild(hexagramInnerDiv);
+            });
+            results.appendChild(hexagramDiv);
+        }
+    </script>
+</body>
+
+</html>
