@@ -17,6 +17,7 @@ function shuffle(array) {
 
 function getRandomHexagrams() {
     const results = document.getElementById("results");
+    results.style.display = "flex";
     results.innerHTML = "";
 
     const hexagramDiv = document.createElement("div");
@@ -38,34 +39,43 @@ function getRandomHexagrams() {
 function showAboutDialog() {
     const dialogOverlay = document.createElement('div');
     dialogOverlay.classList.add('dialog-overlay');
-  
+
     const dialogContent = document.createElement('div');
     dialogContent.classList.add('dialog-content');
     dialogContent.addEventListener('click', hideAboutDialog);
-  
+
     const closeButton = document.createElement('span');
     closeButton.classList.add('close-button');
     closeButton.innerText = '×';
     closeButton.addEventListener('click', hideAboutDialog);
-  
+
     const dialogText = document.createElement('p');
     dialogText.innerText = 'Це програма для отримання гексаграм за книгою змін І-цзин. Дія книги заснована на концепції І-цзин та використовується для передбачення майбутнього та отримання порад.';
-  
+
     dialogContent.appendChild(closeButton);
     dialogContent.appendChild(dialogText);
     dialogOverlay.appendChild(dialogContent);
-  
+
     document.body.appendChild(dialogOverlay);
-  }
-  
-  function hideAboutDialog() {
+}
+
+function hideAboutDialog() {
     const dialogOverlay = document.querySelector('.dialog-overlay');
     if (dialogOverlay) {
-      document.body.removeChild(dialogOverlay);
+        document.body.removeChild(dialogOverlay);
     }
-  }
-  
-  
-  function redirectToBook() {
+}
+
+
+function redirectToBook() {
     window.open("https://uk.wikipedia.org/wiki/%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0_%D0%B7%D0%BC%D1%96%D0%BD", "_blank");
-  }
+}
+
+
+const logo = document.getElementById("logo");
+logo.addEventListener("click", hideHexagrams);
+
+function hideHexagrams() {
+    const results = document.getElementById("results");
+    results.style.display = "none";
+}
