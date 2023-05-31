@@ -165,17 +165,18 @@ footer p {
   background-image: url("modal.png");
   background-size: cover;
   background-position: center;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  /* border-radius: 5px; */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); */
 }
 
 .close-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 36%;
+  right: 40%;
   width: 20px;
   height: 20px;
   background-color: #e5e7e1;
+  border-radius: 50%;
   border: none;
   cursor: pointer;
 }

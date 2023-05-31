@@ -46,7 +46,7 @@ function showAboutDialog() {
 
     const closeButton = document.createElement('span');
     closeButton.classList.add('close-button');
-    closeButton.innerText = '×';
+    // closeButton.innerText = '×';
     closeButton.addEventListener('click', hideAboutDialog);
 
     const dialogText = document.createElement('p');
