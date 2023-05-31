@@ -50,7 +50,7 @@ function showAboutDialog() {
     closeButton.addEventListener('click', hideAboutDialog);
 
     const dialogText = document.createElement('p');
-    dialogText.innerText = 'Це програма для отримання гексаграм за книгою змін І-цзин. Дія книги заснована на концепції І-цзин та використовується для передбачення майбутнього та отримання порад.';
+    dialogText.innerHTML = '<h2>Про програму</h2> Програма створена у відповідності до концепції книги змін І-цзин та призначена для передбачення майбутнього та отримання порад.<hr> &copy; 2023 Олександр Бабич <br> зроблено з ❤️ <br> спільно з ChatGPT та GitHub Copilot';
 
     dialogContent.appendChild(closeButton);
     dialogContent.appendChild(dialogText);
