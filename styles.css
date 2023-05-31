@@ -171,8 +171,8 @@ footer p {
 
 .close-button {
   position: absolute;
-  top: 36%;
-  right: 40%;
+  top: calc(50% - 140px);
+  right: calc(50% - 200px);
   width: 20px;
   height: 20px;
   background-color: #e5e7e1;
