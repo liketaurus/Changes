@@ -64,9 +64,9 @@
       const zodiacSign = getZodiacSign(dob.getDate(), dob.getMonth()+1);
       // const horoscope = getHoroscope(zodiacSign.trim());
       
-      document.getElementById("destiny-number").innerHTML = `Destiny Number for ${dobstring}: ${destinyNumber} <br>${destinyNumbers[destinyNumber-1].description}`;
-      document.getElementById("biorhythms").innerHTML = `Biorhythms: Physical: ${biorhythms.physical}%, Emotional: ${biorhythms.emotional}%, Intellectual: ${biorhythms.intellectual}%`;
-      document.getElementById("zodiac-sign").innerHTML = `Zodiac Sign: ${zodiacSignsUA[zodiacSigns.indexOf(zodiacSign)]}`;
+      document.getElementById("destiny-number").innerHTML = `Destiny Number for ${dobstring}: ${destinyNumber} <br>${destinyNumbers[destinyNumber-1].description} <br>Positives: ${destinyNumbers[destinyNumber-1].advantages} <br>Negatives: ${destinyNumbers[destinyNumber-1].disadvantages} <br>Suitable Professions: ${destinyNumbers[destinyNumber-1].suitableProfessions}<br>Compatibility: ${destinyNumbers[destinyNumber-1].compatibility}<br>`;
+      document.getElementById("biorhythms").innerHTML = `Biorhythms: Physical: ${biorhythms.physical}%, Emotional: ${biorhythms.emotional}%, Intellectual: ${biorhythms.intellectual}%<br>`;
+      document.getElementById("zodiac-sign").innerHTML = `Zodiac Sign: ${zodiacSignsUA[zodiacSigns.indexOf(zodiacSign)]}<br>`;
       // document.getElementById("horoscope").innerHTML = `Horoscope: ${horoscope}`;
       getHoroscope(zodiacSign);
     }
