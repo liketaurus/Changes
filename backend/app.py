@@ -15,7 +15,7 @@ cors = CORS(app, resource={
 
 @app.route('/horoscope/<sign>')
 def get_horoscope(sign):
-    url = f'https://telegraf.com.ua/lifestyle/goroskop/sign/{sign}/'
+    url = f'https://telegraf.com.ua/ukr/lifestyle/goroskop/sign/{sign}/'
     response = requests.get(url)
     if response.status_code != 200:
         return jsonify({'error': f'Request failed with status code {response.status_code}'}), 400
