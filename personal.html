@@ -12,7 +12,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Calculate App</a>
+    <a class="navbar-brand" href="#">Персональні метрики</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -49,10 +49,16 @@
       </div>
     </div>
     <button onclick="calculate()" class="btn btn-primary">Обчислити</button><br><br>
-    <div id="destiny-number"></div>
-    <div id="biorhythms"></div>
-    <div id="zodiac-sign"></div>
-    <div id="horoscope"></div>
+
+
+    <div class="row">
+      <div class="col-12">
+        <div id="destiny-number"></div>
+        <div id="biorhythms"></div>
+        <div id="zodiac-sign"></div>
+        <div id="horoscope"></div>  
+      </div>
+    </div>
   </div>
 
   <footer class="bg-light text-center mt-5 py-3">
@@ -80,7 +86,7 @@
       const zodiacSign = getZodiacSign(dob.getDate(), dob.getMonth() + 1);
       // const horoscope = getHoroscope(zodiacSign.trim());
 
-      document.getElementById("destiny-number").innerHTML = `Число долі для ${dob.toLocaleDateString('uk-UA', { day: '2-digit', month: '2-digit', year: 'numeric' })} - це ${destinyNumber} <br>&nbsp;&nbsp;&nbsp;&nbsp;${destinyNumbers[destinyNumber - 1].description} <br>&nbsp;&nbsp;&nbsp;&nbsp;Чесноти: ${destinyNumbers[destinyNumber - 1].advantages} <br>&nbsp;&nbsp;&nbsp;&nbsp;Недоліки: ${destinyNumbers[destinyNumber - 1].disadvantages} <br>&nbsp;&nbsp;&nbsp;&nbsp;Покликання: ${destinyNumbers[destinyNumber - 1].suitableProfessions}<br>&nbsp;&nbsp;&nbsp;&nbsp;Сумісність: ${destinyNumbers[destinyNumber - 1].compatibility}<br>`;
+      document.getElementById("destiny-number").innerHTML = `Число долі для ${dob.toLocaleDateString('uk-UA', { day: '2-digit', month: '2-digit', year: 'numeric' })} - це ${destinyNumber} <br>${destinyNumbers[destinyNumber - 1].description} <br>&nbsp;&nbsp;&nbsp;&nbsp;Чесноти: ${destinyNumbers[destinyNumber - 1].advantages} <br>&nbsp;&nbsp;&nbsp;&nbsp;Недоліки: ${destinyNumbers[destinyNumber - 1].disadvantages} <br>&nbsp;&nbsp;&nbsp;&nbsp;Покликання: ${destinyNumbers[destinyNumber - 1].suitableProfessions}<br>&nbsp;&nbsp;&nbsp;&nbsp;Сумісність: ${destinyNumbers[destinyNumber - 1].compatibility}<br>`;
       document.getElementById("biorhythms").innerHTML = `Біоритми: <br>&nbsp;&nbsp;&nbsp;&nbsp;Фізичний: <span id="phys">${biorhythms.physical}%</span> <br>&nbsp;&nbsp;&nbsp;&nbsp;Емоційний: <span id="emo">${biorhythms.emotional}%</span> <br>&nbsp;&nbsp;&nbsp;&nbsp;Інтелектуальний: <span id="int">${biorhythms.intellectual}%</span><br>`;
       document.getElementById("zodiac-sign").innerHTML = `Знак зодіаку: ${zodiacSignsUA[zodiacSigns.indexOf(zodiacSign)]}<br>`;
       // document.getElementById("horoscope").innerHTML = `Horoscope: ${horoscope}`;
