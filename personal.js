@@ -58,22 +58,21 @@ function getZodiacSign(day, month) {
   return (day > lastDayOfSign[month - 1]) ? zodiacSigns[month] : zodiacSigns[month - 1];
 }
 
+// hosted on render.com
+// https://render.com/docs/deploy-flask
+// sample url is https://horoscopes.onrender.com/horoscope/taurus
 async function getHoroscope(sign) {
-  const url = `https://horoscopes-ai.p.rapidapi.com/get_horoscope/${sign}/today/general/en`;
+  const url = `https://horoscopes.onrender.com/horoscope/${sign}`;
   const options = {
     method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': ' YOUR_API_KEY',
-      'X-RapidAPI-Host': 'horoscopes-ai.p.rapidapi.com'
-    }
   };
 
   try {
-    const response = await fetch(url, options);
+    const response = await fetch(url);
     const result = await response.text();
     console.log(result);
     const horo = JSON.parse(result);
-    document.getElementById("horoscope").innerHTML = `Horoscope: ${horo.general}`;
+    document.getElementById("horoscope").innerHTML = `Horoscope: ${horo.horoscope}`;
   } catch (error) {
     console.error(error);
   }
