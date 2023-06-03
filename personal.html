@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <title>Calculate Destiny Number, Biorhythms, Zodiac Sign, and Horoscope</title>
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/yeti/bootstrap.min.css" integrity="sha384-mLBxp+1RMvmQmXOjBzRjqqr0dP9VHU2tb3FK6VB0fJN/AOu7/y+CAeYeWJZ4b3ii" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/yeti/bootstrap.min.css"
+    integrity="sha384-mLBxp+1RMvmQmXOjBzRjqqr0dP9VHU2tb3FK6VB0fJN/AOu7/y+CAeYeWJZ4b3ii" crossorigin="anonymous">
   <link rel="stylesheet" href="personal.css">
 </head>
 
@@ -32,12 +33,22 @@
   </nav>
 
   <div class="container mt-5">
-    <h1>Calculate Destiny Number, Biorhythms, Zodiac Sign, and Horoscope</h1>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br><br>
-    <label for="dob">Date of Birth:</label>
-    <input type="date" id="dob" name="dob"><br><br>
-    <button onclick="calculate()" class="btn btn-primary">Calculate</button><br><br>
+    <h1>Обчислення числа долі, знаку зодіаку, біоритмів та гороскопу на сьогодні</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="name">Ваше м'я (укр):</label>
+          <input type="text" id="name" name="name" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="dob">Дата народження:</label>
+          <input type="date" id="dob" name="dob" class="form-control">
+        </div>
+      </div>
+    </div>
+    <button onclick="calculate()" class="btn btn-primary">Обчислити</button><br><br>
     <div id="destiny-number"></div>
     <div id="biorhythms"></div>
     <div id="zodiac-sign"></div>
@@ -45,12 +56,17 @@
   </div>
 
   <footer class="bg-light text-center mt-5 py-3">
-    &copy; 2023 Your Website. All Rights Reserved.
+    &copy; 2023 Олександр Бабич. Зроблено з ❤️ спільно з ChatGPT та GitHub Copilot
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+    integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"></script>
   <script src="fate.js"></script>
   <script src="personal.js"></script>
 
@@ -61,14 +77,19 @@
       const dob = new Date(dobstring);
       const destinyNumber = calculateDestinyNumber(name, dobstring);
       const biorhythms = getBiorhythms(dob);
-      const zodiacSign = getZodiacSign(dob.getDate(), dob.getMonth()+1);
+      const zodiacSign = getZodiacSign(dob.getDate(), dob.getMonth() + 1);
       // const horoscope = getHoroscope(zodiacSign.trim());
-      
-      document.getElementById("destiny-number").innerHTML = `Destiny Number for ${dobstring}: ${destinyNumber} <br>${destinyNumbers[destinyNumber-1].description} <br>Positives: ${destinyNumbers[destinyNumber-1].advantages} <br>Negatives: ${destinyNumbers[destinyNumber-1].disadvantages} <br>Suitable Professions: ${destinyNumbers[destinyNumber-1].suitableProfessions}<br>Compatibility: ${destinyNumbers[destinyNumber-1].compatibility}<br>`;
-      document.getElementById("biorhythms").innerHTML = `Biorhythms: Physical: ${biorhythms.physical}%, Emotional: ${biorhythms.emotional}%, Intellectual: ${biorhythms.intellectual}%<br>`;
-      document.getElementById("zodiac-sign").innerHTML = `Zodiac Sign: ${zodiacSignsUA[zodiacSigns.indexOf(zodiacSign)]}<br>`;
+
+      document.getElementById("destiny-number").innerHTML = `Число долі для ${dob.toLocaleDateString('uk-UA', { day: '2-digit', month: '2-digit', year: 'numeric' })} - це ${destinyNumber} <br>&nbsp;&nbsp;&nbsp;&nbsp;${destinyNumbers[destinyNumber - 1].description} <br>&nbsp;&nbsp;&nbsp;&nbsp;Чесноти: ${destinyNumbers[destinyNumber - 1].advantages} <br>&nbsp;&nbsp;&nbsp;&nbsp;Недоліки: ${destinyNumbers[destinyNumber - 1].disadvantages} <br>&nbsp;&nbsp;&nbsp;&nbsp;Покликання: ${destinyNumbers[destinyNumber - 1].suitableProfessions}<br>&nbsp;&nbsp;&nbsp;&nbsp;Сумісність: ${destinyNumbers[destinyNumber - 1].compatibility}<br>`;
+      document.getElementById("biorhythms").innerHTML = `Біоритми: <br>&nbsp;&nbsp;&nbsp;&nbsp;Фізичний: <span id="phys">${biorhythms.physical}%</span> <br>&nbsp;&nbsp;&nbsp;&nbsp;Емоційний: <span id="emo">${biorhythms.emotional}%</span> <br>&nbsp;&nbsp;&nbsp;&nbsp;Інтелектуальний: <span id="int">${biorhythms.intellectual}%</span><br>`;
+      document.getElementById("zodiac-sign").innerHTML = `Знак зодіаку: ${zodiacSignsUA[zodiacSigns.indexOf(zodiacSign)]}<br>`;
       // document.getElementById("horoscope").innerHTML = `Horoscope: ${horoscope}`;
       getHoroscope(zodiacSign);
+
+      document.getElementById("phys").style.color = biorhythms.physical > 0 ? "green" : "red";
+      document.getElementById("emo").style.color = biorhythms.emotional > 0 ? "green" : "red";
+      document.getElementById("int").style.color = biorhythms.intellectual > 0 ? "green" : "red";
+
     }
   </script>
 </body>

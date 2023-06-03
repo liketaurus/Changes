@@ -73,7 +73,7 @@ async function getHoroscope(sign) {
     const result = await response.text();
     console.log(result);
     const horo = JSON.parse(result);
-    document.getElementById("horoscope").innerHTML = `Horoscope: ${horo.horoscope}`;
+    document.getElementById("horoscope").innerHTML = `Гороскоп на сьогодні, ${(new Date()).toLocaleDateString('uk-UA', { day: '2-digit', month: '2-digit', year: 'numeric' })}: ${horo.horoscope}`;
   } catch (error) {
     console.error(error);
   }
