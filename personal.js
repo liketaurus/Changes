@@ -58,24 +58,12 @@ function getZodiacSign(day, month) {
   return (day > lastDayOfSign[month - 1]) ? zodiacSigns[month] : zodiacSigns[month - 1];
 }
 
-
-//  приклад JavaScript-коду для отримання гороскопа 
-  // const URL = `https://ohmanda.com/api/horoscope/${sign}`;
-  // fetch(URL)
-  //   .then(response => response.json())
-  //   .then(json => {
-  //     console.log(json);
-  //     document.getElementById("horoscope").innerHTML = `Horoscope: ${json.horoscope}`;
-  //   })
-  //   .catch(error => {
-  //     console.log(`An error occurred while fetching the horoscope: ${error}`);
-  //   });
-
+async function getHoroscope(sign) {
   const url = `https://horoscopes-ai.p.rapidapi.com/get_horoscope/${sign}/today/general/en`;
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': 'ff36497416msh6e78f6a04d04c38p107031jsne4da49284bb0',
+      'X-RapidAPI-Key': ' YOUR_API_KEY',
       'X-RapidAPI-Host': 'horoscopes-ai.p.rapidapi.com'
     }
   };
