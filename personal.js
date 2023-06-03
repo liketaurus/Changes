@@ -50,10 +50,11 @@ function getBiorhythms(birthDate) {
 // Якщо значення біоритму перевищує 0%, то людина може відчувати підвищену активність та ефективність у відповідному аспекті життя. 
 // Якщо значення біоритму менше 0%, то людина може відчувати зниження активності та ефективності у відповідному аспекті життя
 
+var zodiacSignsUA = ["Козеріг", "Водолій", "Риби", "Овен", "Телець", "Близнюки", "Рак", "Лев", "Діва", "Терези", "Скорпіон", "Стрілець"];
+var zodiacSigns = ["capricorn", "aquarius", "pisces", "aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius"];
+
 //horoscope
-function getZodiacSign(day, month) {
-  // var zodiacSigns = ["Козеріг", "Водолій", "Риби", "Овен", "Телець", "Близнюки", "Рак", "Лев", "Діва", "Терези", "Скорпіон", "Стрілець"];
-  var zodiacSigns = ["capricorn", "aquarius", "pisces", "aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius"];
+function getZodiacSign(day, month) { 
   var lastDayOfSign = [20, 19, 20, 20, 21, 21, 22, 23, 23, 23, 22, 21];
   return (day > lastDayOfSign[month - 1]) ? zodiacSigns[month] : zodiacSigns[month - 1];
 }

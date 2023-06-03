@@ -66,7 +66,7 @@
       
       document.getElementById("destiny-number").innerHTML = `Destiny Number for ${dobstring}: ${destinyNumber} <br>${destinyNumbers[destinyNumber-1].description}`;
       document.getElementById("biorhythms").innerHTML = `Biorhythms: Physical: ${biorhythms.physical}%, Emotional: ${biorhythms.emotional}%, Intellectual: ${biorhythms.intellectual}%`;
-      document.getElementById("zodiac-sign").innerHTML = `Zodiac Sign: ${zodiacSign}`;
+      document.getElementById("zodiac-sign").innerHTML = `Zodiac Sign: ${zodiacSignsUA[zodiacSigns.indexOf(zodiacSign)]}`;
       // document.getElementById("horoscope").innerHTML = `Horoscope: ${horoscope}`;
       getHoroscope(zodiacSign);
     }
